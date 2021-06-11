@@ -30,7 +30,7 @@ bot.on('message', (message) => {
     if(message.author.bot) return;
     if(message.channel.type !== 'text') return;
 // prefix to use bot
-    let prefix = '//';
+    let prefix = '*';
 // seperates messaages by spaces
     let MessageArray = message.content.split(' ');
     let cmd          = MessageArray[0].slice(prefix.length)
@@ -40,6 +40,8 @@ bot.on('message', (message) => {
 
     let commandfile = bot.commands.get(cmd);
     if(commandfile)   {commandfile.run(bot,message,args)}
+
+
 })
 
 
