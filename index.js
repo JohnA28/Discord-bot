@@ -1,4 +1,4 @@
-//Suck my balls, Mr. Garrison.
+
 const Discord = require('discord.js')
 const bot     = new Discord.Client({ws: {intents: Discord.Intents.ALL}});
 const fs      = require("fs")
