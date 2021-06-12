@@ -1,8 +1,8 @@
-//ODUxMjQ3NTM2ODczNzk5NzMw.YL1gDA.QBKAMreeCkkL8ZqT8Wct3hLGcqI    <---- token
 //Suck my balls, Mr. Garrison.
 const Discord = require('discord.js')
 const bot     = new Discord.Client({ws: {intents: Discord.Intents.ALL}});
 const fs      = require("fs")
+require("dotenv").config()
 bot.commands  = new Discord.Collection();
 
 bot.on('ready', () => {
@@ -45,4 +45,4 @@ bot.on('message', (message) => {
 })
 
 
-bot.login("ODUxMjQ3NTM2ODczNzk5NzMw.YL1gDA.QBKAMreeCkkL8ZqT8Wct3hLGcqI")
+bot.login(process.env.DISCORD_TOKEN)
