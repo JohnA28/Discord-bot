@@ -12,6 +12,7 @@
     "@r6stats/node": "^4.0.0-alpha3",
     "axios": "^0.21.1",
     "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0",
     "node-fetch": "^2.6.1",
     "sv443-joke-api": "^0.1.0"
   }
