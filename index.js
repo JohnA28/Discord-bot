@@ -1,4 +1,6 @@
+require('dotenv').config();
 const { Client, GatewayIntentBits, Partials, Collection } = require('discord.js');
+client.events = new Collection();
 
 /*
 idk what this does but it's required  
@@ -18,10 +20,6 @@ const client = new Client({
         Partials.GuildMessages,
     ] 
 });
-
-require('dotenv').config() //needed for env file
-
-client.events = new Collection();
 
 client.on('ready', () => {
     console.log('Bot online');
