@@ -1,3 +1,9 @@
+/*
+this file is just a script for deploying new commands whenever they're added
+when done making a command just run this and it will deploy as a slash command
+in the server
+*/
+
 const { REST, Routes } = require('discord.js');
 require('dotenv').config();
 const fs = require('node:fs');
