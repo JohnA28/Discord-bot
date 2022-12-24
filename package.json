@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/JohnA28/Cortana-bot#readme",
   "dependencies": {
-    "discord.js": "^14.5.0",
+    "discord.js": "^14.7.1",
     "dotenv": "^16.0.3"
   }
 }
