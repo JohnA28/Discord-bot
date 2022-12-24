@@ -1,19 +1,24 @@
 {
-  "name": "discord-bot",
+  "name": "cortana-bot",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "John",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohnA28/Cortana-bot.git"
+  },
+  "keywords": [],
+  "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JohnA28/Cortana-bot/issues"
+  },
+  "homepage": "https://github.com/JohnA28/Cortana-bot#readme",
   "dependencies": {
-    "@r6stats/node": "^4.0.0-alpha3",
-    "axios": "^0.21.1",
-    "discord.js": "^12.5.3",
-    "dotenv": "^10.0.0",
-    "node-fetch": "^2.6.1",
-    "sv443-joke-api": "^0.1.0"
+    "discord.js": "^14.5.0",
+    "dotenv": "^16.0.3"
   }
 }
