@@ -1,28 +1,14 @@
+// Require the necessary discord.js classes
+const { Client, Events, GatewayIntentBits } = require('discord.js');
 require('dotenv').config();
-const { Client, GatewayIntentBits, Partials, Collection } = require('discord.js');
-client.events = new Collection();
 
-/*
-idk what this does but it's required  
-*/
-const client = new Client({ 
-    intents: [
-        GatewayIntentBits.Guilds,
-        GatewayIntentBits.GuildMembers,
-        GatewayIntentBits.GuildMessages,
-        GatewayIntentBits.MessageContent,
-    ], 
-    partials: [
-        Partials.User,
-        Partials.Channel,
-        Partials.Message,
-        Partials.GuildMember,
-        Partials.GuildMessages,
-    ] 
+// Create a new client instance
+const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+
+// When the client is ready, run this code (only once)
+// We use 'c' for the event parameter to keep it separate from the already defined 'client'
+client.once(Events.ClientReady, c => {
+	console.log(`Bot is online!`);
 });
 
-client.on('ready', () => {
-    console.log('Bot online');
-});
-
-client.login(process.env.BOT_TOKEN); //connects the bot using token
+client.login(process.env.BOT_TOKEN); // login for the bot using token
