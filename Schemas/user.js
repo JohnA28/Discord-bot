@@ -8,7 +8,8 @@ const user = new Schema({
   },
   completedGames: [{
     type: Schema.Types.ObjectId,
-    ref: 'game'
+    ref: 'game',
+    required: false
   }]
 })
 
