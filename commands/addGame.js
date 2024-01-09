@@ -1,5 +1,6 @@
 const {SlashCommandBuilder} = require('discord.js');
 const gameSchema = require('../Schemas/game');
+const userSchema = require('../Schemas/user')
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -24,14 +25,29 @@ module.exports = {
   async execute (interaction) {
     const { options } = interaction;
 
+    //saving inputs
     const gameName = options.getString('game-name');
     const gamePoints = options.getString('points-worth');
     const gamePlatform = options.getString('platform');
 
+    //retreiving id of message sender
+    let userId = await userSchema.findOne({discord_id: interaction.user.username});
+
+    
+    if (!userId) {
+      let newUser = new userSchema({
+        discord_id: interaction.user.username
+      })
+      await newUser.save();
+    }
+
+
+
     await gameSchema.create ({
       name: gameName,
       points: gamePoints,
-      platform: gamePlatform
+      platform: gamePlatform,
+      player: userId || interaction.user.username
     });
 
     await interaction.reply('Data saved, Good work!');
