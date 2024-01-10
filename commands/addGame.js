@@ -32,12 +32,12 @@ module.exports = {
     const gamePlatform = options.getString('platform');
 
     //retreiving id of message sender
-    let userId = await userSchema.findOne({discord_id: interaction.user.username});
+    const userId = await userSchema.findOne({discord_id: interaction.user.username});
 
     
     //will save user's info if not found in database
     if (!userId) {
-      let newUser = new userSchema({
+      const newUser = new userSchema({
         discord_id: interaction.user.username
       })
       await newUser.save();
