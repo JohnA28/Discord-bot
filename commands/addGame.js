@@ -32,7 +32,7 @@ module.exports = {
     const gamePlatform = options.getString('platform');
 
     //retreiving id of message sender
-    const userId = await userSchema.findOne({discord_id: interaction.user.username});
+    let userId = await userSchema.findOne({discord_id: interaction.user.username});
 
     
     //will save user's info if not found in database
@@ -41,6 +41,7 @@ module.exports = {
         discord_id: interaction.user.username
       })
       await newUser.save();
+      userId = newUser
     }
 
 
